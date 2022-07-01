@@ -1,0 +1,9 @@
+p {
+	color: aqua;
+	background: pink;
+	font-size: medium;
+	text-align: right;
+}
+h1 {
+	text-shadow:2px 2px 8px #FF0000;
+}
