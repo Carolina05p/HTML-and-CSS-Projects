@@ -1,45 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title> Choose your favorite Pet!</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="./CSS/one_page_website.css">
-	</head>
-	<body>
-		<!-- NAV -->
+
+<head>
+
+	<title> Choose your favorite Pet!</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="./CSS/one_page_website.css">
+	<script src="JS/one_page_website.js" defer></script>
+
+</head>
+
+<body>
+
+	<!-- NAV -->
+	<div>
+		<div>
+			<u1>
+				<a href="#home" id="link">
+					<li>HOME</li>
+				</a>
+				<a href="#pictures">
+					<li>PICTURES</li>
+				</a>
+				<a href="#video">
+					<li>VIDEO</li>
+				</a>
+				<a href="#contact">
+					<li>CONTACT</li>
+				</a>
+
+			</u1>
+		</div>
+	</div>
+	<!--END NAV -->
+
+	<!--HOME -->
+	<div id="home">
 		<div>
 			<div>
-				<u1>
-					<a href="#home" id="link"><li>HOME</li></a>
-					<a href="#pictures"><li>PICTURES</li></a>
-					<a href="#video"><li>VIDEO</li></a>
-					<a href="#contact"><li>CONTACT</li></a>
-					
-				</u1>
+				<span>Choose your Pet</span>
 			</div>
 		</div>
-		<!--END NAV -->
+	</div>
+	<!--END HOME -->
 
-		<!--HOME -->
-		<div id="home">
+	<!-- PICTURES -->
+	<section>
+		<div id="pictures">
+			<h1>PICTURES</h1>
 			<div>
-				<div>
-					<span>Choose your Pet</span>
-				</div>
-			</div>
-		</div>
-		<!--END HOME -->
-		
-		<!-- PICTURES -->
-		<section>
-			<div id="pictures">
-				<h1>PICTURES</h1>
-				<div>
 
 				<!-- PHOTO-CONTAINER 1 -->
 				<div>
-					<div>
-						<img src="./images/thumb/pet_1.jpg" alt="Cute dogs">
+					<div >
+						<img src="./images/thumb/pet_1.jpg" alt="Cute dogs" width="750px" height="600px">
 						<div>
 							<h3>Click to Enlarge</h3>
 							<p>We have several dogs to choose from!</p>
@@ -51,7 +65,7 @@
 				<!-- PHOTO-CONTAINER 2 -->
 				<div>
 					<div>
-					<img src="./images/thumb/pet_2.jpg" alt="Cute cats">
+						<img src="./images/thumb/pet_2.jpg" alt="Cute cats">
 						<div>
 							<h3>Click to Enlarge</h3>
 							<p>We have different cats to choose from!</p>
@@ -59,49 +73,101 @@
 					</div>
 				</div>
 				<!--END PHOTO-CONTAINER 2 -->
-				
-				</div>
-			</div>
-		</section>
-		<!-- END PICTURES -->
 
-		<!-- VIDEO-->
-		<section>
-			<div id="video">
-				<div>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/LmcpwN6JKxU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				</div>
 			</div>
-		</section>
-		<!-- END VIDEO-->
+		</div>
+	</section>
 
-		<!-- CONTACT -->
-		<section>
-			<div id="contact">
+	<!-- Images used to open the lightbox -->
+
+	<div class="row">
+		<div class="column">
+			<img src="./images/Thumb/pet_1 - Copy.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+		</div>
+		<div class="column">
+			<img src="./images/Thumb/pet_2 - Copy.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+		</div>
+	</div>
+
+	<!-- The Modal/Lightbox -->
+	<div id="myModal" class="modal">
+		<span class="close cursor" onclick="closeModal()">&times;</span>
+		<div class="modal-content">
+
+			<div class="mySlides">
+				<div class="numbertext">1 / 2</div>
+				<img src="./images/Thumb/pet_1 - Copy.jpg" style="width:100%">
+			</div>
+
+			<div class="mySlides">
+				<div class="numbertext">2 / 2</div>
+				<img src="./images/Thumb/pet_2 - Copy.jpg" style="width:100%">
+			</div>
+
+			<!-- Next/previous controls -->
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+			<!-- Caption text -->
+			<div class="caption-container">
+				<p id="caption"></p>
+			</div>
+
+			<!-- Thumbnail image controls -->
+			<div class="column">
+				<img class="demo" src="./images/Thumb/pet_1.jpg" onclick="currentSlide(1)" alt="Dogs">
+			</div>
+
+			<div class="column">
+				<img class="demo" src="./images/Thumb/pet_2.jpg" onclick="currentSlide(2)" alt="Cats">
+			</div>
+		</div>
+	</div>
+
+	<!-- END PICTURES -->
+
+	<!-- VIDEO-->
+	<section>
+		<div id="video">
+			<div>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/LmcpwN6JKxU"
+					title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
+			</div>
+		</div>
+	</section>
+	<!-- END VIDEO-->
+
+	<!-- CONTACT -->
+	<section>
+		<div id="contact">
+			<div>
+				<h1>Contact Information</h1>
 				<div>
-					<h1>Contact Information</h1>
+					<p>
+						Please provide us with your basic contact information so we can help you choose your next pet.
+					</p>
 					<div>
-						<p>
-							Please provide us with your basic contact information so we can help you choose your next pet.
-						</p>
-						<div>
-							<form action="" method="post">
-								First Name:<input type="text" name="First_Name"><br>
-								Last Name:<input type="text" name="Last_Name"><br>
-								Email"<input type="Emil" name="Email"><br>
-								Password:<input type="password" name="Password"><br>
-								<input type="submit" value="Submit">
-							</form>
-						</div>
+						<form action="" method="post">
+							First Name:<input type="text" name="First_Name"><br>
+							Last Name:<input type="text" name="Last_Name"><br>
+							Email"<input type="Emil" name="Email"><br>
+							Password:<input type="password" name="Password"><br>
+							<input type="submit" value="Submit">
+						</form>
 					</div>
 				</div>
-		</section>
-		<!--END CONTACT-->
+			</div>
+	</section>
+	<!--END CONTACT-->
 
-		<!--FOOTER -->
-		<div>
-			<footer> www.thecutepets.pets &nbsp|&nbsp &copy: 2022 </footer>
-		</div>
-		<!-- END FOOTER-->
-	</body>
+	<!--FOOTER -->
+	<div>
+		<footer> www.thecutepets.pets &nbsp|&nbsp &copy: 2022 </footer>
+	</div>
+	<!-- END FOOTER-->
+
+</body>
+
 </html>
